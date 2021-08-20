@@ -6,10 +6,122 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mac Book Pro!</title>
+
+    <!-- tailwind -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body>
-    <h1>neunrjek</h1>
+<body class='font-sans font-family:"Noto Sans", sans-serif'>
+
+    <main class="grid grid-cols-2 gap-4">
+        <!-- image -->
+        <section class=" ml-12 mt-20">
+            <img class="w-3/4" src="mac.png" alt="">
+        </section>
+
+        <!-- cost calculation form -->
+        <section>
+            <p class="text-5xl my-3 font-medium">Customize Your Blue 24-inch iMac with Apple M1 chip</p>
+            <p class="font-normal text-gray-700">Unboxing the new 24-inch Apple iMac, all I could think was that my
+                old
+                curved-back 27-inch iMac was a
+                dead man walking. The long-standing iMac design, virtually untouched since 2012, held up well over the
+                years, but a change was well past due. The new version of the smaller iMac model (formerly 21.5 inches,
+                now 24 inches) has a slim, refreshed design.</p>
+
+            <!-- all the button -->
+            <div class="my-5">
+                <!-- memory -->
+                <div class="mb-4">
+                    <p>Memory</p>
+                    <button id="memory-normal"
+                        class="border-2 border-gray-400 p-1.5 mr-1.5 rounded hover:bg-gray-800 hover:text-white">8GB
+                        unified
+                        memory</button>
+                    <button id="memory-more"
+                        class="border-2 border-gray-400 p-1.5 mr-1.5 rounded hover:bg-gray-800 hover:text-white">16GB
+                        unified memory</button>
+                </div>
+
+                <!-- storage -->
+                <div class="mb-4">
+                    <p>Storage</p>
+                    <button id="storage-normal"
+                        class="border-2 border-gray-400 p-1.5 mr-1.5 rounded hover:bg-gray-800 hover:text-white">256GB
+                        SSD storage</button>
+                    <button id="storage-extra"
+                        class="border-2 border-gray-400 p-1.5 mr-1.5 rounded hover:bg-gray-800 hover:text-white">512GB
+                        SSD storage</button>
+                    <button id="storage-more"
+                        class="border-2 border-gray-400 p-1.5 mr-1.5 rounded hover:bg-gray-800 hover:text-white">1TB
+                        SSD storage</button>
+                </div>
+
+                <!-- delivery -->
+                <div class="mb-10">
+                    <p>Choose Your Delivery Option</p>
+                    <button id="delivery-normal"
+                        class="border-2 border-gray-400 p-1.5 mr-1.5 rounded hover:bg-gray-800 hover:text-white">Friday,Aug
+                        25 Free PRIME Delivery</button>
+                    <button id="delivery-special"
+                        class="border-2 border-gray-400 p-1.5 mr-1.5 rounded hover:bg-gray-800 hover:text-white">Friday,Aug
+                        21 Delivery Charge $20</button>
+                </div>
+            </div>
+
+            <!-- all the cost -->
+            <div class="grid grid-cols-1 divide-y divide-gray-500">
+
+                <!-- default -->
+                <div class="grid grid-cols-2 gap-2">
+                    <p>Best Price</p>
+                    <p>$ <span id="default-cost">1299</span></p>
+                </div>
+
+                <!-- memory -->
+                <div class="grid grid-cols-2 gap-2">
+                    <p>Extra Memory Cost</p>
+                    <p>$ <span id="memory-cost">00</span></p>
+                </div>
+
+                <!-- storage -->
+                <div class="grid grid-cols-2 gap-2">
+                    <p>Extra Storage Cost</p>
+                    <p>$<span id="storage-cost">00</span></p>
+                </div>
+
+                <!-- delivery -->
+                <div class="grid grid-cols-2 gap-2">
+                    <p>Delivery Charge</p>
+                    <p>$<span id="delivery-cost">00</span></p>
+                </div>
+
+                <!-- total -->
+                <div class="grid grid-cols-2 gap-2">
+                    <p>Total Price</p>
+                    <p>$ <span id="total-cost">1299</span></p>
+                </div>
+
+                <!-- promo code -->
+                <div>
+                    <p class="mt-5 text-gray-500">Add Promo Code</p>
+                    <input id="promo-code" class="border-2 border-gray-400 p-1.5 mr-1.5 rounded" type="text">
+                    <button onclick="applyButton()"
+                        class="border bg-red-600 text-white px-4 py-2 rounded">Apply</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <br>
+    <hr>
+
+    <footer>
+        <p class="text-center text-4xl mt-2">Total : $<span id="total">1299</span></p>
+    </footer>
+
+    <!-- script -->
+    <script src="app.js"></script>
 </body>
 
 </html>
