@@ -1,13 +1,13 @@
 // dafualt
 function defaultCost(item) {
     document.getElementById(item + '-cost').innerText = 00;
-    totalCost()
+    totalCost();
 }
 
 // 16gb memory & 1tb storage
-function moreStorage(storage) {
+function moreCost(storage) {
     document.getElementById(storage + '-cost').innerText = 180;
-    totalCost()
+    totalCost();
 }
 
 
@@ -32,10 +32,10 @@ function totalCost() {
 
 // memory
 document.getElementById('memory-normal').addEventListener('click', function () {
-    defaultCost('memory')
+    defaultCost('memory');
 })
 document.getElementById('memory-more').addEventListener('click', function () {
-    moreStorage('memory')
+    moreCost('memory');
 })
 
 
@@ -45,21 +45,21 @@ document.getElementById('storage-normal').addEventListener('click', function () 
 })
 document.getElementById('storage-extra').addEventListener('click', function () {
     document.getElementById('storage-cost').innerText = 100;
-    totalCost()
+    totalCost();
 })
 document.getElementById('storage-more').addEventListener('click', function () {
-    moreStorage('storage')
+    moreCost('storage');
 })
 
 
 
 // delivery
 document.getElementById('delivery-normal').addEventListener('click', function () {
-    defaultCost('delivery')
+    defaultCost('delivery');
 })
 document.getElementById('delivery-special').addEventListener('click', function () {
     document.getElementById('delivery-cost').innerText = 20;
-    totalCost()
+    totalCost();
 })
 
 
@@ -67,11 +67,11 @@ document.getElementById('delivery-special').addEventListener('click', function (
 // promo code apply
 function applyButton() {
     const promoCode = document.getElementById('promo-code').value;
-    const totalPrice = document.getElementById('total').innerText;
+    const totalPrice = document.getElementById('total-cost').innerText;
     const totalPriceNumber = parseFloat(totalPrice);
     if (promoCode == 'stevekaku') {
         const discount = totalPriceNumber * 0.2;
-        document.getElementById('total').innerText = totalPriceNumber - discount;
+        document.getElementById('total').innerText = (totalPriceNumber - discount).toFixed(1);
 
         // clear
         document.getElementById('promo-code').value = '';
